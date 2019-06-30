@@ -1433,6 +1433,9 @@ main(int ac, char **av)
 	Authctxt *authctxt;
 	struct connection_info *connection_info = NULL;
 
+	if (ac == 0)
+		fatal("Argument list to main() is empty");
+
 #ifdef HAVE_SECUREWARE
 	(void)set_auth_parameters(ac, av);
 #endif
